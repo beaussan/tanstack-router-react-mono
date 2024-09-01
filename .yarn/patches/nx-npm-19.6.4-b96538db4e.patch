@@ -1,0 +1,21 @@
+diff --git a/src/project-graph/plugins/isolation/plugin-pool.js b/src/project-graph/plugins/isolation/plugin-pool.js
+index b10ee0d28c994db4e39c4f650dd47496c22cdb60..29c5d3963023b729109fa6f7a46b7ad595c58f7e 100644
+--- a/src/project-graph/plugins/isolation/plugin-pool.js
++++ b/src/project-graph/plugins/isolation/plugin-pool.js
+@@ -266,6 +266,7 @@ async function startPluginWorker() {
+         const id = setInterval(async () => {
+             const socket = await isServerAvailable(ipcPath);
+             if (socket) {
++                console.log('Managed to start worker in ' + attempts + ' attempts')
+                 socket.unref();
+                 clearInterval(id);
+                 resolve({
+@@ -276,7 +277,7 @@ async function startPluginWorker() {
+             else if (attempts > 1000) {
+                 // daemon fails to start, the process probably exited
+                 // we print the logs and exit the client
+-                reject('Failed to start plugin worker.');
++                reject('Failed to start plugin worker after' + attempts + '.');
+             }
+             else {
+                 attempts++;

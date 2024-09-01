@@ -47,7 +47,7 @@
     "eslint-plugin-react": "7.32.2",
     "eslint-plugin-react-hooks": "4.6.0",
     "jsdom": "~22.1.0",
-    "nx": "19.6.4",
+    "nx": "patch:nx@npm%3A19.6.4#~/.yarn/patches/nx-npm-19.6.4-b96538db4e.patch",
     "postcss": "8.4.38",
     "prettier": "^2.6.2",
     "tailwindcss": "3.4.3",
@@ -58,5 +58,8 @@
   "nx": {
     "includedScripts": []
   },
-  "packageManager": "yarn@4.4.1"
+  "packageManager": "yarn@4.4.1",
+  "resolutions": {
+    "nx@npm:19.6.4": "patch:nx@npm%3A19.6.4#~/.yarn/patches/nx-npm-19.6.4-b96538db4e.patch"
+  }
 }

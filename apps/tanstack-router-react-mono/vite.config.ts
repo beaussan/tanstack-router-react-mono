@@ -2,12 +2,11 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
-import { TanStackRouterVite } from '@tanstack/router-plugin/vite'
-
+import { TanStackRouterVite } from '@tanstack/router-plugin/vite';
 
 export default defineConfig({
   root: __dirname,
-  cacheDir: './node_modules/.vite/tanstack-router-react-mono',
+  cacheDir: '../../node_modules/.vite/tanstack-router-react-mono',
 
   server: {
     port: 4200,
@@ -27,7 +26,7 @@ export default defineConfig({
   // },
 
   build: {
-    outDir: './dist/tanstack-router-react-mono',
+    outDir: '../../dist/tanstack-router-react-mono',
     emptyOutDir: true,
     reportCompressedSize: true,
     commonjsOptions: {
@@ -43,7 +42,7 @@ export default defineConfig({
 
     reporters: ['default'],
     coverage: {
-      reportsDirectory: './coverage/tanstack-router-react-mono',
+      reportsDirectory: '../../coverage/tanstack-router-react-mono',
       provider: 'v8',
     },
   },

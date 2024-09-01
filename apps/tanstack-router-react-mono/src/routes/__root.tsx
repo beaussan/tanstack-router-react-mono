@@ -1,15 +1,15 @@
-import * as React from 'react'
+import * as React from 'react';
 import {
   Link,
   Outlet,
   createRootRouteWithContext,
-} from '@tanstack/react-router'
-import { TanStackRouterDevtools } from '@tanstack/router-devtools'
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
-import type { QueryClient } from '@tanstack/react-query'
+} from '@tanstack/react-router';
+import { TanStackRouterDevtools } from '@tanstack/router-devtools';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import type { QueryClient } from '@tanstack/react-query';
 
 export const Route = createRootRouteWithContext<{
-  queryClient: QueryClient
+  queryClient: QueryClient;
 }>()({
   component: RootComponent,
   notFoundComponent: () => {
@@ -18,9 +18,9 @@ export const Route = createRootRouteWithContext<{
         <p>This is the notFoundComponent configured on root route</p>
         <Link to="/">Start Over</Link>
       </div>
-    )
+    );
   },
-})
+});
 
 function RootComponent() {
   return (
@@ -66,5 +66,5 @@ function RootComponent() {
       <ReactQueryDevtools buttonPosition="top-right" />
       <TanStackRouterDevtools position="bottom-right" />
     </>
-  )
+  );
 }
