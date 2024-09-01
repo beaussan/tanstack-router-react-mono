@@ -14,7 +14,17 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@tanstack-router-react-mono/data-posts": [
+        "libs/data/posts/src/index.ts"
+      ],
+      "@tanstack-router-react-mono/data-router": [
+        "libs/data/router/src/index.ts"
+      ],
+      "@tanstack-router-react-mono/feature-post": [
+        "libs/feature/posts/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

@@ -8,8 +8,7 @@ import {
   useQueryErrorResetBoundary,
   useSuspenseQuery,
 } from '@tanstack/react-query';
-import { PostNotFoundError } from '../../datafetching/posts';
-import { postQueryOptions } from '../../datafetching/posts';
+import { PostNotFoundError, postQueryOptions } from '@tanstack-router-react-mono/data-posts';
 import type { ErrorComponentProps } from '@tanstack/react-router';
 
 export const Route = createFileRoute('/posts/$postId')({

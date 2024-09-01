@@ -1,0 +1,9 @@
+{
+  "name": "feature-post",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/feature/posts/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project feature-post --web",
+  "targets": {}
+}

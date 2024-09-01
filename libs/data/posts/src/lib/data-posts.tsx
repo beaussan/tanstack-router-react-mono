@@ -9,7 +9,7 @@ export type PostType = {
 
 export class PostNotFoundError extends Error {}
 
-export const fetchPost = async (postId: string) => {
+const fetchPost = async (postId: string) => {
   console.info(`Fetching post with id ${postId}...`);
   await new Promise((r) => setTimeout(r, 500));
   const post = await axios
@@ -25,7 +25,7 @@ export const fetchPost = async (postId: string) => {
   return post;
 };
 
-export const fetchPosts = async () => {
+const fetchPosts = async () => {
   console.info('Fetching posts...');
   await new Promise((r) => setTimeout(r, 500));
   return axios
