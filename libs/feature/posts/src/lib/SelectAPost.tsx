@@ -1,5 +1,5 @@
 import * as React from 'react';
 
-export function PostsIndexComponent() {
+export function SelectAPost() {
   return <div>Select a post.</div>;
 }
