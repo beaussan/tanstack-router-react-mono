@@ -22,7 +22,7 @@ export const Route = createRootRouteWithContext<{
   },
 });
 
-function RootComponent() {
+export function RootComponent() {
   return (
     <>
       <div className="p-2 flex gap-2 text-lg">

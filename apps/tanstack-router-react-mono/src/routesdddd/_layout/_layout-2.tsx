@@ -1,10 +1,6 @@
-import { Link, Outlet, createFileRoute } from '@tanstack/react-router';
+import { Link, Outlet } from '@tanstack-router-react-mono/data-router';
 
-export const Route = createFileRoute('/_layout/_layout-2')({
-  component: LayoutComponent,
-});
-
-function LayoutComponent() {
+export function LayoutComponent2() {
   return (
     <div>
       <div>I'm a nested layout</div>

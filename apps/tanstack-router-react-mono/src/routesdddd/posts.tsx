@@ -3,14 +3,7 @@ import { Link, Outlet, createFileRoute } from '@tanstack/react-router';
 import { useSuspenseQuery } from '@tanstack/react-query';
 import { postsQueryOptions } from '@tanstack-router-react-mono/data-posts';
 
-export const Route = createFileRoute('/posts')({
-  loader: ({ context: { queryClient } }) =>
-    queryClient.ensureQueryData(postsQueryOptions),
-  pendingComponent: () => <div>Loading posts list...</div>,
-  component: PostsComponent,
-});
-
-function PostsComponent() {
+export function PostsComponent() {
   const postsQuery = useSuspenseQuery(postsQueryOptions);
   const posts = postsQuery.data;
 

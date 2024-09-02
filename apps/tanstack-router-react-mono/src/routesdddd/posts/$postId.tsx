@@ -1,24 +1,19 @@
 import * as React from 'react';
-import {
-  ErrorComponent,
-  createFileRoute,
-  useRouter,
-} from '@tanstack/react-router';
+import { ErrorComponent } from '@tanstack/react-router';
 import {
   useQueryErrorResetBoundary,
   useSuspenseQuery,
 } from '@tanstack/react-query';
-import { PostNotFoundError, postQueryOptions } from '@tanstack-router-react-mono/data-posts';
-import type { ErrorComponentProps } from '@tanstack/react-router';
+import {
+  PostNotFoundError,
+  postQueryOptions,
+} from '@tanstack-router-react-mono/data-posts';
 
-export const Route = createFileRoute('/posts/$postId')({
-  loader: ({ context: { queryClient }, params: { postId } }) => {
-    return queryClient.ensureQueryData(postQueryOptions(postId));
-  },
-  errorComponent: PostErrorComponent,
-  pendingComponent: () => <div>Loading post...</div>,
-  component: PostComponent,
-});
+import {
+  getRouteApi,
+  useRouter,
+} from '@tanstack-router-react-mono/data-router';
+import type { ErrorComponentProps } from '@tanstack/react-router';
 
 export function PostErrorComponent({ error, reset }: ErrorComponentProps) {
   const router = useRouter();
@@ -45,8 +40,10 @@ export function PostErrorComponent({ error, reset }: ErrorComponentProps) {
   );
 }
 
-function PostComponent() {
-  const postId = Route.useParams().postId;
+const route = getRouteApi('/posts/$postId');
+
+export function PostComponent() {
+  const postId = route.useParams().postId;
   const { data: post } = useSuspenseQuery(postQueryOptions(postId));
 
   return (

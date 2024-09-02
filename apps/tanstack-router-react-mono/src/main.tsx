@@ -1,36 +1,33 @@
 import React, { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
-import { RouterProvider, createRouter } from '@tanstack/react-router';
-
+import { RouterProvider } from '@tanstack/react-router';
 // Import the generated route tree
-import { routeTree } from './routeTree.gen';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { QueryClientProvider } from '@tanstack/react-query';
+import {
+  router,
+  queryClient,
+  Outlet,
+  RoutePaths,
+} from '@tanstack-router-react-mono/data-router';
+import { routerMap } from './routerMap';
 
-const queryClient = new QueryClient();
+function EmptyComponent() {
+  return <Outlet />;
+}
 
-// Set up a Router instance
-const router = createRouter({
-  routeTree,
-  context: {
-    queryClient,
-  },
-  defaultPendingComponent: () => (
-    <div>Loading form global pending component...</div>
-  ),
-  // This make the loader only wait 200ms before shoing the pending component, instead of the default 1000ms
-  defaultPendingMs: 200,
-  defaultPreload: 'intent',
-  // Since we're using React Query, we don't want loader calls to ever be stale
-  // This will ensure that the loader is always called when the route is preloaded or visited
-  defaultPreloadStaleTime: 0,
+Object.entries(routerMap).forEach(([path, component]) => {
+  const foundRoute = router.routesById[path as RoutePaths];
+  if (foundRoute) {
+    console.log('Found route', path);
+    foundRoute.update({
+      component: component ?? EmptyComponent,
+    });
+  }
 });
 
-// Register the router instance for type safety
-declare module '@tanstack/react-router' {
-  interface Register {
-    router: typeof router;
-  }
-}
+console.log(router.flatRoutes);
+
+console.log(router);
 
 // Render the app
 const rootElement = document.getElementById('root')!;

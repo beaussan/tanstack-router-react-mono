@@ -4,6 +4,8 @@ import react from '@vitejs/plugin-react';
 import dts from 'vite-plugin-dts';
 import * as path from 'path';
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
+import { TanStackRouterVite } from '@tanstack/router-plugin/vite';
+
 
 export default defineConfig({
   root: __dirname,
@@ -16,6 +18,7 @@ export default defineConfig({
       entryRoot: 'src',
       tsconfigPath: path.join(__dirname, 'tsconfig.lib.json'),
     }),
+    TanStackRouterVite(),
   ],
 
   // Uncomment this if you are using workers.
