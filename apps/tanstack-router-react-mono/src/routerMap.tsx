@@ -1,12 +1,12 @@
 import { RoutePaths } from '@tanstack-router-react-mono/data-router';
 import React from 'react';
-import { RootComponent } from './routesdddd/__root';
-import { Home } from './routesdddd';
-import { LayoutAComponent } from './routesdddd/_layout/_layout-2/layout-a';
-import { LayoutBComponent } from './routesdddd/_layout/_layout-2/layout-b';
-import { LayoutComponent2 } from './routesdddd/_layout/_layout-2';
-import { About } from './routesdddd/about.lazy';
-import { GlobalLayoutComponent } from './routesdddd/_layout';
+import { RootComponent } from './otherRoutes/__root';
+import { Home } from './otherRoutes';
+import { LayoutAComponent } from './otherRoutes/_layout/_layout-2/layout-a';
+import { LayoutBComponent } from './otherRoutes/_layout/_layout-2/layout-b';
+import { LayoutComponent2 } from './otherRoutes/_layout/_layout-2';
+import { About } from './otherRoutes/about';
+import { GlobalLayoutComponent } from './otherRoutes/_layout';
 import {
   PostComponent,
   PostsComponent,

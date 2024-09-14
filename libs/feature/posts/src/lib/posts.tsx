@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { Link, Outlet, createFileRoute } from '@tanstack/react-router';
 import { useSuspenseQuery } from '@tanstack/react-query';
 import { postsQueryOptions } from '@tanstack-router-react-mono/data-posts';
+import { Link, Outlet } from '@tanstack-router-react-mono/data-router';
 
 export function PostsComponent() {
   const postsQuery = useSuspenseQuery(postsQueryOptions);

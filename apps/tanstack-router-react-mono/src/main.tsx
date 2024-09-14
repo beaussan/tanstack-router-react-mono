@@ -25,10 +25,6 @@ Object.entries(routerMap).forEach(([path, component]) => {
   }
 });
 
-console.log(router.flatRoutes);
-
-console.log(router);
-
 // Render the app
 const rootElement = document.getElementById('root')!;
 if (!rootElement.innerHTML) {
