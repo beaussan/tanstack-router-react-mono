@@ -17,9 +17,9 @@ With this approach, we can use the query options from the data library in the ro
 
 And given the router lib re exposes the router components, when we import them in the feature library they are type safe given they are linked to the typescript augmentations.
 
-And finally, in the app, we can create a map of route to component (`apps/tanstack-router-react-mono/src/routerMap.tsx`) that is used to stitch the router together with the components. We could enforce lazy loading here also.
+And finally, in the app, we can create a map of route to component ([`apps/tanstack-router-react-mono/src/routerMap.tsx`](https://github.com/beaussan/tanstack-router-react-mono/blob/main/apps/tanstack-router-react-mono/src/routerMap.tsx)) that is used to stitch the router together with the components. **We could enforce lazy loading here also, but this was omitted for simplicity**.
 
-Then, in the main file, we updates the routes with the route map we bulit `apps/tanstack-router-react-mono/src/main.tsx`, and we now have a fully type safe router!
+Then, in the main file, we updates the routes with the route map we bulit [`apps/tanstack-router-react-mono/src/main.tsx`](https://github.com/beaussan/tanstack-router-react-mono/blob/main/apps/tanstack-router-react-mono/src/main.tsx#L18-L26), and we now have a fully type safe router!
 
 Here is what it looks like in the monorepo:
 
